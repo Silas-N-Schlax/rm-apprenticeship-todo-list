@@ -1,0 +1,50 @@
+/**
+ * Atlas theme — overrides Optics's built-in theme tokens.
+ *
+ * Optics generates its entire color scale (every plus/minus stop, every
+ * "on" text color, background, borders) from just Hue + Saturation per
+ * color family. Lightness stops are FIXED percentages baked into the
+ * compiled optics.css (e.g. every family's `-base` is light-dark(hsl(h,s,40%),
+ * hsl(h,s,32%)) regardless of the `-l` var) — that's what keeps every theme
+ * accessible. So theming Optics means overriding H/S here, not hand-building
+ * a color scale. See /znotes/optics-tokens-reference.md.
+ *
+ * Must load AFTER `@import '@rolemodel/optics'` and BEFORE any component CSS.
+ */
+
+:root {
+  /* Primary — bronze (Atlas himself, the primary action) */
+  --op-color-primary-h: 32;
+  --op-color-primary-s: 60%;
+  --op-color-primary-l: 45%;
+
+  /* Neutral — warm stone/marble (decoupled from primary hue on purpose,
+     so surfaces read warm even as primary is retuned later) */
+  --op-color-neutral-h: 30;
+  --op-color-neutral-s: 8%;
+  --op-color-neutral-l: 45%;
+
+  /* Alerts: warning — ochre (Fate approaching, Moderate weight) */
+  --op-color-alerts-warning-h: 42;
+  --op-color-alerts-warning-s: 85%;
+  --op-color-alerts-warning-l: 52%;
+
+  /* Alerts: danger — terracotta (Abandon, Neglected Burdens, Heavy weight) */
+  --op-color-alerts-danger-h: 8;
+  --op-color-alerts-danger-s: 70%;
+  --op-color-alerts-danger-l: 48%;
+
+  /* Alerts: info — Aegean sky (Domains tags, links) */
+  --op-color-alerts-info-h: 200;
+  --op-color-alerts-info-s: 55%;
+  --op-color-alerts-info-l: 42%;
+
+  /* Alerts: notice — laurel green (Cast Off, Light weight) */
+  --op-color-alerts-notice-h: 135;
+  --op-color-alerts-notice-s: 45%;
+  --op-color-alerts-notice-l: 38%;
+
+  /* Typography — classical inscription serif for display, sans for body */
+  --op-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --op-font-family-alt: "Cinzel", "Playfair Display", Georgia, serif;
+}

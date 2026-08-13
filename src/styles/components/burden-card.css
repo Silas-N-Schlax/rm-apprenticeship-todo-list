@@ -1,0 +1,65 @@
+/**
+ * A single Burden (task). Composes Optics's .card — apply both classes in
+ * markup: `<li class="card card--padded card--shadow-x-small burden-card">`.
+ * This file only adds what .card doesn't already provide: the burden-specific
+ * layout, elements, and cast-off/neglected state.
+ */
+
+.burden-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--op-space-small);
+
+  &.burden-card--cast-off {
+    opacity: var(--op-opacity-disabled);
+
+    .burden-card__title {
+      text-decoration: line-through;
+    }
+  }
+
+  &.burden-card--neglected {
+    --_op-card-box-shadow: var(--op-border-all) var(--op-color-alerts-danger-base);
+  }
+
+  .burden-card__body {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .burden-card__title {
+    margin: 0 0 var(--op-space-3x-small);
+    font-size: var(--op-font-large);
+    font-weight: var(--op-font-weight-semi-bold);
+  }
+
+  .burden-card__meta {
+    display: flex;
+    align-items: center;
+    gap: var(--op-space-x-small);
+    margin-bottom: var(--op-space-2x-small);
+  }
+
+  .burden-card__fate {
+    font-size: var(--op-font-small);
+    color: var(--op-color-on-background-alt);
+  }
+
+  .burden-card__fate--neglected {
+    color: var(--op-color-alerts-danger-minus-one);
+    font-weight: var(--op-font-weight-semi-bold);
+  }
+
+  .burden-card__domains {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--op-space-2x-small);
+  }
+
+  .burden-card__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--op-space-2x-small);
+    flex-shrink: 0;
+  }
+}

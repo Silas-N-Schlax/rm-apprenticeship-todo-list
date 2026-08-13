@@ -1,0 +1,16 @@
+/**
+ * Atlas stylesheet entry point. Loaded via src/index.js -> webpack
+ * (css-loader/style-loader), not linked directly in template.html.
+ * Order matters: Optics itself, then the theme override, then base
+ * additions, then component overrides, then new app-specific components.
+ *
+ * Using the "+lucide_icons" build instead of the default so Lucide's
+ * `.li` / `.li-{icon-name}` classes are available (Material Symbols
+ * classes still work too — this bundle includes both).
+ */
+
+@import "@rolemodel/optics/dist/css/optics+lucide_icons.css";
+@import "./optics-theme.css";
+@import "./base-overrides.css";
+@import "./components/overrides/button.css";
+@import "./components/burden-card.css";

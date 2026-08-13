@@ -1,0 +1,16 @@
+/**
+ * Small Atlas-specific additions on top of Optics's core/base.css.
+ * Everything else (background, text color, spacing) already comes from
+ * the theme tokens in optics-theme.css — nothing to duplicate here.
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar__brand {
+  font-family: var(--op-font-family-alt);
+  letter-spacing: var(--op-letter-spacing-navigation);
+}

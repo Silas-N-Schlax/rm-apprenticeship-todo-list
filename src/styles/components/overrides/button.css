@@ -1,0 +1,14 @@
+/**
+ * Optics's .btn ships primary/destructive/warning modifiers but no
+ * success/notice variant. Atlas needs one for "Cast Off" (complete).
+ * Follows the same pattern as Optics's own btn--warning in button.css.
+ */
+
+.btn.btn--notice {
+  background-color: var(--op-color-alerts-notice-base);
+  color: var(--op-color-alerts-notice-on-base);
+
+  &:hover {
+    background-color: var(--op-color-alerts-notice-minus-one);
+  }
+}
