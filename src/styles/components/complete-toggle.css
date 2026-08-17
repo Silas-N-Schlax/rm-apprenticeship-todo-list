@@ -1,0 +1,26 @@
+.btn.complete-toggle {
+  --__op-btn-height: var(--op-input-height-small);
+
+  border-radius: var(--op-radius-circle);
+  border: var(--op-border-width) solid var(--op-color-neutral-minus-two);
+  background-color: transparent;
+  color: transparent;
+
+  .complete-toggle__check {
+    --__op-icon-font-size: var(--op-font-small);
+  }
+
+  &:hover {
+    border-color: var(--op-color-alerts-notice-base);
+  }
+
+  &.complete-toggle--subtask {
+    --__op-btn-height: var(--op-space-large);
+  }
+
+  &.complete-toggle--complete {
+    border-color: var(--op-color-alerts-notice-base);
+    background-color: var(--op-color-alerts-notice-base);
+    color: var(--op-color-alerts-notice-on-base);
+  }
+}

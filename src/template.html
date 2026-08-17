@@ -9,6 +9,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <button id="seed-btn">Seed Sample Data</button>
+  <div class="op-page" id="app">
+    <div class="op-page__sidebar">
+      <aside class="sidebar sidebar--drawer sidebar--padded">
+        <div class="sidebar__brand">
+          <span class="atlas-brand">
+            <img class="atlas-brand__mark" src="./images/logo.png" alt="Atlas">
+          </span>
+        </div>
+
+        <div class="sidebar__content">
+          <button type="button" class="btn btn--primary full-width" id="add-task-btn">
+            <span class="icon li li-plus" aria-hidden="true"></span>
+            Take on a Burden
+          </button>
+
+          <button type="button" class="btn btn--no-border full-width" id="forge-realm-btn">
+            <span class="icon li li-plus" aria-hidden="true"></span>
+            Forge a Realm
+          </button>
+
+          <nav class="realm-nav" aria-label="Realms">
+            <p class="realm-nav__label">Realms</p>
+            <ul class="realm-nav__list" id="realm-nav-list"></ul>
+          </nav>
+        </div>
+
+        <div class="sidebar__content sidebar__content--end">
+          <button type="button" class="btn btn--no-border full-width" id="profile-btn" data-action="show-profile">
+            <span class="icon li li-circle-user-round" aria-hidden="true"></span>
+            <span id="profile-name"></span>
+          </button>
+        </div>
+      </aside>
+    </div>
+    <div class="op-page__main" id="main-mount"></div>
+  </div>
 </body>
 </html>

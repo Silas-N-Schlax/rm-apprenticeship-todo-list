@@ -1,0 +1,27 @@
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--op-space-small);
+  padding-block: var(--op-space-4x-large);
+
+  .empty-state__icon {
+    --__op-icon-font-size: var(--op-font-5x-large);
+    color: var(--op-color-neutral-minus-two);
+  }
+
+  .empty-state__title {
+    margin: 0;
+  }
+
+  .empty-state__message {
+    margin: 0;
+    max-inline-size: 32ch;
+    color: var(--op-color-on-background-alt);
+  }
+
+  .empty-state__actions {
+    margin-block-start: var(--op-space-small);
+  }
+}

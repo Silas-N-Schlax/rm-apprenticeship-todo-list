@@ -1,0 +1,17 @@
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--op-space-medium);
+  max-inline-size: calc(141 * var(--op-size-unit));
+
+  .profile-page__section-title {
+    margin: 0 0 var(--op-space-small);
+    font-size: var(--op-font-medium);
+    font-weight: var(--op-font-weight-semi-bold);
+  }
+
+  .profile-page__section-message {
+    margin: 0 0 var(--op-space-small);
+    color: var(--op-color-on-background-alt);
+  }
+}

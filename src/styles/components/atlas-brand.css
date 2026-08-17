@@ -1,0 +1,13 @@
+.atlas-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 100%;
+  block-size: 100%;
+
+  .atlas-brand__mark {
+    max-inline-size: 100%;
+    block-size: 100%;
+    object-fit: contain;
+  }
+}

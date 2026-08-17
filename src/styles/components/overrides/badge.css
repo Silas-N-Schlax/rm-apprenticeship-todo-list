@@ -1,0 +1,5 @@
+.badge {
+  .li {
+    --__op-icon-font-size: var(--op-font-small);
+  }
+}

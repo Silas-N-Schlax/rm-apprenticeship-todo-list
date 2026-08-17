@@ -1,0 +1,22 @@
+.subtask-item {
+  display: flex;
+  align-items: center;
+  gap: var(--op-space-x-small);
+  padding-block: var(--op-space-3x-small);
+
+  & + .subtask-item {
+    border-block-start: var(--op-border-all) var(--op-color-border);
+  }
+
+  .subtask-item__title {
+    flex: 1;
+    font-size: var(--op-font-small);
+  }
+
+  &.subtask-item--complete {
+    .subtask-item__title {
+      text-decoration: line-through;
+      color: var(--op-color-on-background-alt);
+    }
+  }
+}

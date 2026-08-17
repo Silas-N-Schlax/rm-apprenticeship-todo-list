@@ -1,0 +1,5 @@
+.op-page__main-header {
+  padding-inline: var(--op-space-large);
+  background-color: var(--op-color-neutral-plus-eight);
+  box-shadow: var(--op-shadow-x-small);
+}

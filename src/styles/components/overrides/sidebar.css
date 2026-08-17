@@ -1,0 +1,13 @@
+.sidebar {
+  .sidebar__content > * {
+    .li {
+      --__op-icon-font-size: var(--_op-icon-font-size-large);
+      --__op-icon-optical-size: var(--_op-icon-optical-size-large);
+    }
+  }
+
+  .sidebar__content.sidebar__content--end {
+    flex-grow: 0;
+    margin-block-start: auto;
+  }
+}
