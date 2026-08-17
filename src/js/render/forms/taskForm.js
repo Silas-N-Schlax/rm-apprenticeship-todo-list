@@ -52,13 +52,14 @@ export function openTaskForm({ task, projects, projectId, onSubmit }) {
     value: toDateInputValue(task?.dueDate || new Date())
   })
 
-  const prioritySelect = h('select', { class: 'form-control', id: 'task-priority' },
-    Priorities.all().map(p => h('option', {
+  const prioritySelect = h('select', { class: 'form-control', id: 'task-priority' }, [
+    h('option', { value: 0, text: 'No Weight', selected: !task?.priority ? true : null }),
+    ...Priorities.all().map(p => h('option', {
       value: p.value,
       text: p.name,
       selected: task?.priority?.value === p.value ? true : null
     }))
-  )
+  ])
 
   const projectSelect = h('select', { class: 'form-control', id: 'task-project' },
     projects.map(p => h('option', {
