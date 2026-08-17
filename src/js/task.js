@@ -25,8 +25,14 @@ export class Task {
   }
 
   get id() { return this.#id }
+  get title() { return this.#title }
+  get description() { return this.#description }
   get completed() { return this.#completed_at ? true : false }
-  get overdue() { return this.#dueDate < Date() && !this.completed ? true : false }
+  get overdue() {
+    const startOfToday = new Date()
+    startOfToday.setHours(0, 0, 0, 0)
+    return this.#dueDate < startOfToday && !this.completed ? true : false
+  }
   get dueToday() { return this._isSameDay(new Date(this.#dueDate), new Date()) ? true : false }
   get dueDate() { return this.#dueDate }
   get priority() { return Priorities.find(this.#priority) }

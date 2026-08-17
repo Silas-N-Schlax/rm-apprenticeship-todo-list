@@ -25,9 +25,7 @@ import { AppError } from "./error.js"
 
 export class Priorities {
   static validPriority(priorityValue) {
-    PRIORITIES.forEach((setPriority) => {
-      if (setPriority.value == priorityValue) return true
-    })
+    return PRIORITIES.some(priority => priority.value == priorityValue)
   }
 
   static find(priorityValue) {

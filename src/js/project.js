@@ -6,7 +6,7 @@ export class Project {
   #id; #color; #name; #created_at; #updated_at; #tasks
 
   constructor(args) {
-    name = args['name']
+    const name = args['name']
     if (!this.validColor(args['color'])) AppError.throw('Invalid Color')
     if (!name || name.length > 20 || name.length < 3) AppError.throw('Name is too short or to long. Name must be between 3-20 characters')
     this.#name = name
@@ -18,6 +18,8 @@ export class Project {
   }
 
   get id() { return this.#id }
+  get name() { return this.#name }
+  get color() { return this.#color }
   get allTasks() { return this.#tasks }
   get taskCount() { return this.#tasks.length }
   get overDueTasks() { return this.#tasks.map(task => task.overdue == true) }

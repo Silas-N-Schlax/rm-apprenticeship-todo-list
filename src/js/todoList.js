@@ -19,9 +19,17 @@ export class TodoList {
   }
 
   get allProjects() { return this.#projects }
-  get tasksDueToday() { return this.#projects.map(project => project.overDueTasks == true) }
-  get tasksOverDue() { return this.#projects.map(project => project.tasksOverDue == true) }
+  get tasksDueToday() { return this.#projects.flatMap(project => project.allTasks.filter(task => task.dueToday)) }
+  get neglectedTasks() { return this.#projects.flatMap(project => project.allTasks.filter(task => task.overdue)) }
   findProject(id) { return this.#projects.find(project => project.id == id) }
+
+  findTask(id) {
+    for (const project of this.#projects) {
+      const task = project.findTask(id)
+      if (task) return task
+    }
+    return null
+  }
 
   deleteProject(id) {
     const index = this.#projects.findIndex(project => project.id == id)

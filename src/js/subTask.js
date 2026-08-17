@@ -16,6 +16,8 @@ export class SubTask {
   }
 
   get id() { return this.#id }
+  get title() { return this.#title }
+  get description() { return this.#description }
   get completed() { return this.#completed_at ? true : false }
 
   toggleComplete() {
