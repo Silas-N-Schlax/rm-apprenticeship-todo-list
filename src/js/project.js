@@ -37,7 +37,15 @@ export class Project {
   }
 
   set update(args) {
-    // write this and ensure to update the updated_at
+    if (args['name']) {
+      if (args['name'].length > 20 || args['name'].length < 3) AppError.throw('Name is too short or to long. Name must be between 3-20 characters')
+      this.#name = args['name']
+    }
+    if (args['color']) {
+      if (!this.validColor(args['color'])) AppError.throw('Invalid Color')
+      this.#color = args['color']
+    }
+    this.#updated_at = Date()
   }
 
   addTask(args) {
