@@ -3,23 +3,38 @@
  * markup: `<li class="card card--padded card--shadow-x-small burden-card">`.
  * This file only adds what .card doesn't already provide: the burden-specific
  * layout, elements, and cast-off/neglected state.
+ *
+ * The whole card is the accordion (or a plain header when there's nothing to
+ * expand) — .burden-card__summary is the fixed header row (checkbox, title,
+ * meta, marker, actions) and never changes shape when the card opens/closes;
+ * only .burden-card__content (description/subtasks) expands beneath it.
  */
 
 .burden-card {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--op-space-small);
-
   &.burden-card--cast-off {
-    opacity: var(--op-opacity-disabled);
-
     .burden-card__title {
+      color: var(--op-color-on-background-alt);
       text-decoration: line-through;
     }
   }
 
   &.burden-card--neglected {
     --_op-card-box-shadow: var(--op-border-all) var(--op-color-alerts-danger-base);
+  }
+
+  .burden-card__summary {
+    display: flex;
+    align-items: center;
+    gap: var(--op-space-small);
+
+    &:hover .burden-card__marker {
+      color: var(--op-color-primary-base);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: var(--op-input-inner-focus) var(--op-color-primary-plus-two);
+    }
   }
 
   .burden-card__body {
@@ -36,6 +51,7 @@
   .burden-card__meta {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: var(--op-space-x-small);
     margin-bottom: var(--op-space-2x-small);
   }
@@ -50,16 +66,46 @@
     font-weight: var(--op-font-weight-semi-bold);
   }
 
-  .burden-card__domains {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--op-space-2x-small);
-  }
-
   .burden-card__actions {
     display: flex;
     align-items: center;
     gap: var(--op-space-2x-small);
     flex-shrink: 0;
+  }
+
+  .burden-card__marker {
+    --__op-icon-font-size: var(--op-font-medium);
+    color: var(--op-color-on-background-alt);
+    flex-shrink: 0;
+    transition: var(--op-transition-accordion);
+  }
+
+  .burden-card__subtask-count {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--op-space-3x-small);
+    color: var(--op-color-on-background-alt);
+    font-size: var(--op-font-small);
+
+    .li {
+      --__op-icon-font-size: var(--op-font-small);
+    }
+  }
+
+  .burden-card__content {
+    padding-block-start: var(--op-space-small);
+  }
+
+  .burden-card__description {
+    margin: 0 0 var(--op-space-small);
+    color: var(--op-color-on-background-alt);
+  }
+
+  .burden-card__subtasks {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 }
