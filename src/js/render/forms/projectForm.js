@@ -23,7 +23,7 @@ export function openProjectForm({ project, onSubmit }) {
 
   const errorEl = h('p', { class: 'form-error' })
 
-  const form = h('form', { id: 'project-form' }, [
+  const form = h('form', { id: 'project-form', novalidate: true }, [
     h('div', { class: 'form-group' }, [
       h('label', { class: 'form-label', for: 'project-name', text: 'Name' }),
       nameInput

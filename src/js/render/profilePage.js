@@ -22,7 +22,7 @@ export function buildProfilePage({ user, onUpdateName, onSeed }) {
 
   const nameErrorEl = h('p', { class: 'form-error' })
 
-  const nameForm = h('form', { id: 'profile-form', class: 'card card--padded profile-page__section' }, [
+  const nameForm = h('form', { id: 'profile-form', class: 'card card--padded profile-page__section', novalidate: true }, [
     h('h2', { class: 'profile-page__section-title', text: 'Name' }),
     h('div', { class: 'form-group' }, [
       h('label', { class: 'form-label', for: 'profile-name-input', text: 'Name' }),
