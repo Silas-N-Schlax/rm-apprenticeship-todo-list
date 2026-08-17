@@ -32,7 +32,7 @@ export class User {
   }
 
   validName(name) {
-    if (!name || name.length > 20 || name.length < 3) return AppError.throw('Name is too short or to long. Name must be between 3-20 characters')
+    if (!name || name.length > 20 || name.length < 3) return AppError.throw('Name is too short or too long. Name must be between 3-20 characters')
     return true
   }
 }

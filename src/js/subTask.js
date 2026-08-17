@@ -5,7 +5,7 @@ export class SubTask {
   #id; #title; #description; #completed_at; #created_at; #updated_at
 
   constructor(args) {
-    if (!args['title'] || args['title'].length > 120 || args['title'].length < 3) AppError.throw('Title is too short or to long. Name must be between 3-120 characters')
+    if (!args['title'] || args['title'].length > 120 || args['title'].length < 3) AppError.throw('Title is too short or too long. Title must be between 3-120 characters')
 
     this.#title = args['title']
     this.#description = args['description'] || ''
@@ -32,7 +32,7 @@ export class SubTask {
 
   set update(args) {
     if (args['title']) {
-      if (args['title'].length > 120 || args['title'].length < 3) AppError.throw('Title is too short or to long. Name must be between 3-120 characters')
+      if (args['title'].length > 120 || args['title'].length < 3) AppError.throw('Title is too short or too long. Title must be between 3-120 characters')
       this.#title = args['title']
     }
     if (args['description']) this.#description = args['description']

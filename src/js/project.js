@@ -8,7 +8,7 @@ export class Project {
   constructor(args) {
     const name = args['name']
     if (!this.validColor(args['color'])) AppError.throw('Invalid Color')
-    if (!name || name.length > 20 || name.length < 3) AppError.throw('Name is too short or to long. Name must be between 3-20 characters')
+    if (!name || name.length > 20 || name.length < 3) AppError.throw('Name is too short or too long. Name must be between 3-20 characters')
     this.#name = name
     this.#color = args['color']
     this.#created_at = args['created_at'] || Date()
@@ -38,7 +38,7 @@ export class Project {
 
   set update(args) {
     if (args['name']) {
-      if (args['name'].length > 20 || args['name'].length < 3) AppError.throw('Name is too short or to long. Name must be between 3-20 characters')
+      if (args['name'].length > 20 || args['name'].length < 3) AppError.throw('Name is too short or too long. Name must be between 3-20 characters')
       this.#name = args['name']
     }
     if (args['color']) {

@@ -8,7 +8,7 @@ export class Task {
   #id; #title; #description; #dueDate; #priority; #completed_at; #subTasks; #created_at; #updated_at
 
   constructor(args) {
-    if (!args['title'] || args['title'].length > 120 || args['title'].length < 3) AppError.throw('Title is too short or to long. Name must be between 3-120 characters')
+    if (!args['title'] || args['title'].length > 120 || args['title'].length < 3) AppError.throw('Title is too short or too long. Title must be between 3-120 characters')
 
     const dueDate = args['dueDate'] ? new Date(args['dueDate']) : new Date(Date.now() + 24 * 60 * 60 * 1000)
     if (!this.validDate(dueDate)) AppError.throw('Invalid Due Date')
@@ -67,7 +67,7 @@ export class Task {
 
   set update(args) {
     if (args['title']) {
-      if (args['title'].length > 120 || args['title'].length < 3) AppError.throw('Title is too short or to long. Name must be between 3-120 characters')
+      if (args['title'].length > 120 || args['title'].length < 3) AppError.throw('Title is too short or too long. Title must be between 3-120 characters')
       this.#title = args['title']
     }
     if (args['description']) this.#description = args['description']
@@ -76,7 +76,7 @@ export class Task {
       if (!this.validDate(dueDate)) AppError.throw('Invalid Due Date')
       this.#dueDate = dueDate
     }
-    if (args['priority'] && Priorities.validPriority(args['priority'])) this.#priority = args['priority']
+    if (args['priority'] !== undefined && (args['priority'] === 0 || Priorities.validPriority(args['priority']))) this.#priority = args['priority']
     this.#updated_at = Date()
   }
 
