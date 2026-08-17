@@ -56,17 +56,20 @@
   }
 
   .realm-nav__row {
-    position: relative;
     display: flex;
     align-items: center;
 
+    .realm-nav__item {
+      flex: 1;
+      min-inline-size: 0;
+    }
+
     .realm-nav__actions {
-      position: absolute;
-      inset-inline-end: var(--op-space-3x-small);
       display: none;
       align-items: center;
+      flex-shrink: 0;
       gap: var(--op-space-3x-small);
-      background-color: var(--op-color-background);
+      padding-inline-end: var(--op-space-x-small);
     }
 
     &:hover .realm-nav__actions,
@@ -76,7 +79,7 @@
 
     &:hover .realm-nav__count,
     &:focus-within .realm-nav__count {
-      visibility: hidden;
+      display: none;
     }
   }
 }
