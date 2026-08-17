@@ -24,7 +24,7 @@
 
   .burden-card__summary {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--op-space-small);
 
     &:hover .burden-card__marker {
