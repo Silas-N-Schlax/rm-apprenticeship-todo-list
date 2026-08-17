@@ -1,3 +1,5 @@
+import { AppError } from './error.js'
+
 // has a name
 // has a created_at
 //has a updated_at
@@ -18,7 +20,7 @@ export class User {
   set name(newName) {
     if (!this.validName(newName)) return
     this.#name = newName
-    this.updated_at = new Date()
+    this.#updated_at = new Date()
   }
 
   get to_json() {
