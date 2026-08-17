@@ -100,7 +100,7 @@ export function openTaskForm({ task, projects, projectId, onSubmit }) {
 
   const errorEl = h('p', { class: 'form-error' })
 
-  const form = h('form', { id: 'task-form' }, [
+  const form = h('form', { id: 'task-form', novalidate: true }, [
     h('div', { class: 'form-group' }, [
       h('label', { class: 'form-label', for: 'task-title', text: 'Title' }),
       titleInput
